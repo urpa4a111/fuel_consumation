@@ -1,0 +1,29 @@
+# old_kilometers = int(input("Въведете километражът на предишното зареждане: "))
+# new_kilometers = int(input("Въведете километражът по време на зреждането: "))
+# fuel_refill = float(input("Въведете колко литра гориво, заредихте днес: "))
+# price_per_liter = float(input("Въведете цената на един литър гориво: "))
+# kilometers_of_trip = new_kilometers - old_kilometers
+#
+# consumation_of_fuel = (fuel_refill * 100) / kilometers_of_trip
+# price_per_kilometer = consumation_of_fuel * price_per_liter / 100
+#
+# print(f"Вашият разход на гориво е: {consumation_of_fuel:.2f} л./ 100 км.")
+# print(f"Изминатото разстояние с това гориво е: {kilometers_of_trip} км.")
+# print(f"Вие плащате по: {price_per_kilometer:.2f} лв. за един километър пробег!")
+#
+#
+def fuel_consumation(old_km, new_km, fuel_filled):
+    result = fuel_filled * 100 / (new_km - old_km)
+    return result
+
+
+def road_trip(old, new):
+    return new - old
+
+
+oldest_km = int(input("Въведете километражът на предишното зареждане: "))
+newest_km = int(input("Въведете километражът по време на зреждането: "))
+filled_fuel = int(input("Въведете колко литра гориво, заредихте днес: "))
+
+print(f"Вашият разход на гориво е: {fuel_consumation(oldest_km, newest_km, filled_fuel):.2f}  л./ 100 км")
+print(f"Вие изминахте: {road_trip(oldest_km, newest_km)} км.")
